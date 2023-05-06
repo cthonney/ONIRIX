@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   resources :dreams, only: [:edit, :update, :destroy]
   resources :interpretations, only: [:edit, :update, :destroy]
+
+  get 'analyze', to: 'interpretations#analyze'
+
 end
