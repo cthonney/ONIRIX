@@ -1,0 +1,13 @@
+<h1>Contact us</h1>
+
+<%= simple_form_for @contact, url: contact_path do |f| %>
+  <%= f.input :name, label: 'Full name' %>
+  <%= f.input :email, label: 'Email' %>
+  <%= f.input :message, label: 'Message', as: :text %>
+  <% if @show_checkbox_recaptcha %>
+    <%= recaptcha_tags %>
+  <% else %>
+    <%= recaptcha_v3(action: 'login', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
+  <% end %>
+  <%= f.button :submit, 'Send' %>
+<% end %>
