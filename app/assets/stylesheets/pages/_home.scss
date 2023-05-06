@@ -309,4 +309,50 @@ main {
       }
     }
   }
+
+  .faq {
+    margin-top: 4.5rem;
+    color: $white !important;
+
+    .faq-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .accordion {
+      --bs-accordion-bg: none !important;
+      color: $white !important;
+
+      .accordion-item {
+        padding: 2% 0;
+
+        .accordion-button {
+          color: $white !important;
+        }
+
+        .accordion-button::after {
+          background-image: url("../../../assets/images/logo.svg");
+        }
+
+        .accordion-header {
+          font-size: 2.5rem;
+          font-weight: 700;
+        }
+        
+        .accordion-body {
+          color: $white !important;
+        }
+  
+        .accordion-button:not(.collapsed) {
+          background-color: transparent !important;
+          color: $white !important;
+        }
+  
+        .accordion-button:focus {
+          border: 0 !important;
+        }
+      }
+
+    }
+  }
 }
