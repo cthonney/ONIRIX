@@ -1,0 +1,99 @@
+@mixin main-header-style {
+    color: $primaryColor;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+@mixin main-header-style-w {
+    color: $white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+@mixin secondary-header-style {
+    color: $primaryColor;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+@mixin secondary-header-style-w {
+    color: $white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+@mixin subtitle-style {
+    color: $primaryColor;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+@mixin subtitle-style-w {
+    color: $white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+@mixin main-cta-color {
+    color: $white;
+    background-color: $primaryColor;
+    font-size: 1.25rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $white;
+        transform: scale(1.1);
+    }
+}
+
+@mixin main-cta-w {
+    color: $primaryColor;
+    background-color: $white;
+    font-size: 1.25rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $primaryColor;
+        transform: scale(1.1);
+    }
+}
+
+
+@mixin secondary-cta {
+    color: $white;
+    background-color: $primaryColor;
+    border: 2px solid $white;
+    font-size: 1.25rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $primaryColor;
+        background-color: $white;
+        border: 2px solid $primaryColor;
+    }
+}
+
+@mixin secondary-cta-w {
+    color: $primaryColor;
+    background-color: $white;
+    border: 2px solid $primaryColor;
+    font-size: 1.25rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $white;
+        background-color: $primaryColor;
+    }
+}
