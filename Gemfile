@@ -35,6 +35,10 @@ gem "dotenv-rails"
 # Use cloudinary to upload images
 gem "cloudinary"
 
+# Use Recaptcha to protect forms
+gem 'recaptcha'
+
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
