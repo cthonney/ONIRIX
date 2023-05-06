@@ -1,10 +1,10 @@
 // Specific CSS for your home-page
 $font_color: white;
-$font_main: "Roboto";
-$color_main: #23A6D5;
-$color_accent: #23D5AB;
-$color_secondary: #EE7752;
-$color_secondary_accent: #E73C7E;
+$font_main: "Open Sans";
+$color_main: #040720;
+$color_accent: #6184D8;
+$color_secondary: #EDAE49;
+$color_secondary_accent: #FF1654;
 $background: "http://bryce-snyder.com/assets/img/background.jpg";
 
 @mixin grayscale($percent) {
@@ -134,4 +134,135 @@ body.home {
     @include gradient(-45deg, $color_secondary, $color_secondary_accent, $color_main, $color_accent);
     @include animate(gradient_transition, 15s);
   }
+}
+
+
+main .hero-left {
+  width: 100%;
+}
+
+main .hero-left .hero-left-content {
+  color: #FFFFFF;
+  padding: 8% 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+main .hero-left .content-left {
+  width: 49%;
+}
+
+main .hero-left .hero-left-content img {
+  width: 49%;
+  height: 225px;
+  object-fit: cover;
+}
+
+main .hero-left h1 {
+  font-size: 48px;
+  font-family: 'Roboto-extra-bold';
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 2%;
+}
+
+main .hero-left .hero-left-content p {
+  margin-bottom: 3%;
+}
+
+main .hero-left .hero-left-content button {
+  color: #FFFFFF;
+  background-color: $light-gray;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.container {
+  width: 80%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+main .services {
+  padding: 2% 0;
+}
+
+main .services h2 {
+  text-align: center;
+  margin-bottom: 3%;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+main .services .card-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin-bottom: 3%;
+}
+
+main .services .card-container .card {
+  max-width: 150px;
+  text-align: center;
+}
+
+main .services .card-container .card img {
+  width: 150px;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  margin-bottom: 2%;
+  object-fit: cover;
+}
+
+main .container.quote {
+  padding: 6% 0;
+  position: relative;
+  margin-bottom: 6%;
+}
+
+main .quote blockquote p {
+  font-size: 36px;
+  font-family: 'Roboto-light-italic';
+  line-height: 1.2;
+  color: #1F2937;
+}
+
+main .quote blockquote p:nth-last-of-type(1) {
+  position: absolute;
+  top: 70%;
+  right: 13%;
+}
+
+main .cta-container {
+  max-width: 700px;
+  border-radius: 10px;
+  background-color: #3882F6;
+  color: #FFFFFF;
+  padding: 3% 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 6%;
+}
+
+main .cta-container button {
+  color: #FFFFFF;
+  padding: 4px 20px;
+  border-radius: 6px;
+  border: 2px solid #FFFFFF;
 }
