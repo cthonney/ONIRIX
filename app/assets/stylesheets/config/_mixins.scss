@@ -28,6 +28,12 @@
     font-weight: 700;
 }
 
+.secondary-header-style-wh3 {
+    color: $white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
 .subtitle-style {
     color: $primaryColor;
     font-family: 'Montserrat', sans-serif;
@@ -55,15 +61,31 @@
     }
 }
 
-.main-cta-color {
+.main-cta-color-onW {
     color: $white;
+    background-color: $primaryColor;
     font-size: 1.25rem;
     border-radius: 4px;
     transition: all 0.3s ease;
 
     &:hover {
-        color: $white;
+        color: $primaryColor;
         transform: scale(1.1);
+        border: 2px solid $primaryColor;
+    }
+}
+
+.main-cta-color-BonW {
+    color: $white;
+    background-color: $primaryColor1;
+    font-size: 1.25rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $primaryColor1;
+        transform: scale(1.1);
+        border: 2px solid $primaryColor1;
     }
 }
 
