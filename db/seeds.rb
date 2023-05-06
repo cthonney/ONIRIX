@@ -15,7 +15,8 @@ User.destroy_all
 
 # Create users
 puts "Creating users..."
-
+User.create!(email: "user@onirix.com", password: "p@ssword")
+User.create!(email: "admin@onirix.com", password: "p@ssword", admin: true)
 
 # End of database seeding
 puts "Finished seeding the database"
