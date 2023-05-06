@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   get 'contacts/new'
   get 'contacts/create'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }
+  devise_for :users, controllers: {}
 
   root to: "pages#home"
   get "about", to: "pages#about"
