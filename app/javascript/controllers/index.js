@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import TogglePageController from "./toggle_page_controller"
+application.register("toggle-page", TogglePageController)
