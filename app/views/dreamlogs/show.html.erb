@@ -1,2 +1,62 @@
-Surprise madafacka!
-```
+<div class="container personal-section"
+  data-controller='toggle-page'
+>
+  <div class="step step-1 active"
+    data-toggle-page-target='step1'
+  >
+  <%= simple_form_for @personal_detail, url: personal_details_path(dreamlog_id: @dreamlog.id) do |f| %>
+      <h2>Tell us more about yourself</h2>
+      <p>What is your age?</p>
+      <%= f.collection_radio_buttons :age, [  ["Under 18", "< 18"],
+        ["18-24", "18-24"],
+        ["25-34", "25-34"],
+        ["35-44", "35-44"],
+        ["45-54", "45-54"],
+        ["55+", "55+"]
+      ], :second, :first %>
+        <button class="btn btn-primary" data-action='click->toggle-page#showStep2' >Next</button>
+    <br>
+  </div>
+
+    <div class="step step-2" data-toggle-page-target='step2'>
+      <h2>Tell us more about yourself</h2>
+      <p>What is your gender</p>
+      <%= f.collection_radio_buttons :gender, [  ["Male", "Male"],
+        ["Female", "Female"],
+        ["LGBTQIA+", "LGBTQIA+"],
+        ["Apache Helicopter", "Apache Helicopter"],
+        ["I don't want to specify", "I don't want to specify"]
+      ], :second, :first %>
+
+      <button class="btn btn-primary" data-action='click->toggle-page#showStep1'>Go Back</button>
+      <button class="btn btn-primary" data-action='click->toggle-page#showStep3'>Proceed</button>
+    </div>
+    <div class="step step-3" data-toggle-page-target='step3'>
+      <h2>What is your current occupation?</h2>
+      <%= f.collection_radio_buttons :gender, [  ["Student", "Student"],
+        ["Employed", "Employed"],
+        ["Unemployed", "Unemployed"],
+        ["House Work", "House Work"],
+        ["Retired", "Retired"],
+        ["Other", "Other"]
+      ], :second, :first %>
+      <button class="btn btn-primary" data-action='click->toggle-page#showStep2' >Go Back</button>
+      <button class="btn btn-primary" data-action='click->toggle-page#showStep4'>Proceed</button>
+    </div>
+
+    <div class="step step-4" data-toggle-page-target='step4'>
+      <h2>What is your current relationship status?</h2>
+      <%= f.collection_radio_buttons :lovesituation, [  ["Single", "Single"],
+        ["In a relationship", "In a relationship"],
+        ["Married", "Married"],
+        ["Divorced", "Divorced"],
+        ["Widowed", "Widowed"],
+        ["Happy with my cat", "Happy with my cat"],
+        ["Other", "Other"]
+      ], :second, :first %>
+      <button class="btn btn-primary" data-action='click->toggle-page#showStep3' >Go Back</button>
+      <%= f.submit "Submit" %>
+    </div>
+    <% end %>
+
+</div>

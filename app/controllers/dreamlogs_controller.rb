@@ -5,7 +5,7 @@ class DreamlogsController < ApplicationController
 
   def show
     @dreamlog = Dreamlog.find(params[:id])
-    @dreams = @dreamlog.dreams
+    @personal_detail = PersonalDetail.new
   end
 
   def new

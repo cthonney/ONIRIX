@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_06_092832) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_06_211717) do
   create_table "dreamlogs", force: :cascade do |t|
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
@@ -37,6 +37,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_06_092832) do
     t.index ["dream_id"], name: "index_interpretations_on_dream_id"
   end
 
+  create_table "personal_details", force: :cascade do |t|
+    t.string "occupation"
+    t.string "gender"
+    t.string "lovesituation"
+    t.string "age"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_personal_details_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -48,10 +59,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_06_092832) do
     t.string "user"
     t.string "first_name"
     t.string "last_name"
-    t.string "gender"
-    t.string "occupation"
-    t.string "lovesituation"
-    t.string "age"
     t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -60,4 +67,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_06_092832) do
   add_foreign_key "dreamlogs", "users"
   add_foreign_key "dreams", "dreamlogs"
   add_foreign_key "interpretations", "dreams"
+  add_foreign_key "personal_details", "users"
 end
