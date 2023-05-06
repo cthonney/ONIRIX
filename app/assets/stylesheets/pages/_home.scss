@@ -237,36 +237,8 @@ main .services .steps-card-container .steps-card {
   }
 }
 
-main .container.quote {
-  padding: 6% 0;
-  position: relative;
-  margin-bottom: 6%;
-}
 
-main .quote blockquote p {
-  font-size: 36px;
-  font-family: 'Roboto-light-italic';
-  line-height: 1.2;
-  color: #1F2937;
-}
-
-main .quote blockquote p:nth-last-of-type(1) {
-  position: absolute;
-  top: 70%;
-  right: 13%;
-}
-
-main .cta-container {
-  max-width: 700px;
-  border-radius: 10px;
-  background-color: #3882F6;
-  color: #FFFFFF;
-  padding: 3% 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 6%;
-}
+main 
 
 main .cta-container button {
   color: #FFFFFF;
@@ -340,12 +312,41 @@ main {
         border: 3px solid $white;
         padding: 5%;
         border-radius: 10px;
+
+        .podcast {
+          iframe {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .cta-container {
+    border-radius: 10px;
+    background-color: $white;
+    margin: 3.5rem 0;
+    
+    padding: 3% 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 6%;
+
+    .cta-text-content {
+      h3 {
+        color: $primaryColor;
+        font-weight: 700;
+      }
+
+      p {
+        color: $black;
       }
     }
   }
 
   .faq {
-    margin-top: 4.5rem;
+    margin-top: 7.5rem;
     color: $white !important;
 
     .faq-title {
