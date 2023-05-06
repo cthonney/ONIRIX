@@ -1,8 +1,0 @@
-<h1>Contactez-nous</h1>
-
-<%= simple_form_for @contact do |f| %>
-  <%= f.input :name, label: 'Nom' %>
-  <%= f.input :email, label: 'Email' %>
-  <%= f.input :message, label: 'Message', as: :text %>
-  <%= f.button :submit, 'Envoyer' %>
-<% end %>
