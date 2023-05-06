@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# Clean the database
+puts "Cleaning the database..."
+Interpretation.destroy_all
+Dream.destroy_all
+Dreamlog.destroy_all
+User.destroy_all
+
+# Create users
+puts "Creating users..."
+User.create!(email: "user@onirix.com", password: "p@ssword")
+User.create!(email: "admin@onirix.com", password: "p@ssword", admin: true)
+
+# End of database seeding
+puts "Finished seeding the database"
