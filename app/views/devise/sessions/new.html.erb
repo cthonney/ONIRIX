@@ -12,7 +12,13 @@
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
+
   <div class="form-actions">
+  <% if @show_checkbox_recaptcha %>
+    <%= recaptcha_tags %>
+  <% else %>
+    <%= recaptcha_v3(action: 'login', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
+  <% end %>
     <%= f.button :submit, "Log in" %>
   </div>
 <% end %>
