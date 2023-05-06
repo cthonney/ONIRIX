@@ -137,6 +137,7 @@ body.home {
 
 main .hero-left {
   width: 100%;
+  margin: 10% 0;
 }
 
 main .hero-left .hero-left-content {
@@ -206,61 +207,183 @@ main .services h2 {
   font-weight: bold;
 }
 
-main .services .card-container {
+main .services .steps-card-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 900px;
+  min-width: 850px;
+  max-width: 1440px;
   margin-bottom: 3%;
 }
 
-main .services .card-container .card-m {
-  max-width: 150px;
+main .services .steps-card-container .steps-card {
+  width: 28%;
+  min-width: 250px;
+  min-height: 335px;
+  border-radius: 10px;
+  background-color: #EDF4FF;
   text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 3%;
+
+  h3 {
+    color: $color_accent;
+    margin-bottom: 1%;
+    min-height: 120px;
+  }
+
+  p {
+    color: #040720;
+  }
 }
 
-main .services .card-container .card-m img {
-  width: 150px;
-  aspect-ratio: 1;
-  border-radius: 10px;
-  margin-bottom: 2%;
-  object-fit: cover;
-}
 
-main .container.quote {
-  padding: 6% 0;
-  position: relative;
-  margin-bottom: 6%;
-}
-
-main .quote blockquote p {
-  font-size: 36px;
-  font-family: 'Roboto-light-italic';
-  line-height: 1.2;
-  color: #1F2937;
-}
-
-main .quote blockquote p:nth-last-of-type(1) {
-  position: absolute;
-  top: 70%;
-  right: 13%;
-}
-
-main .cta-container {
-  max-width: 700px;
-  border-radius: 10px;
-  background-color: #3882F6;
-  color: #FFFFFF;
-  padding: 3% 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 6%;
-}
+main 
 
 main .cta-container button {
   color: #FFFFFF;
   padding: 4px 20px;
   border-radius: 6px;
   border: 2px solid #FFFFFF;
+}
+
+main {
+  .about-oni {
+    margin-bottom: 4.5rem;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    .about-oni-content-inside {
+      .about-oni-text {
+        margin-bottom: 3.5rem;
+        background-color: $white;
+        border-radius: 10px;
+        padding: 5%;
+        color: $black;
+        margin-top: 2rem;
+
+        h3 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          line-height: 1.6;
+        }
+      }
+
+      .about-oni-text-2 {
+        background-color: none;
+        border: 3px solid $white;
+        padding: 5%;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .dream {
+    margin: 4.5rem 0;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    .dream-content-inside {
+      .dream-text {
+        margin-bottom: 3.5rem;
+        background-color: $white;
+        border-radius: 10px;
+        padding: 5%;
+        color: $black;
+        margin-top: 2rem;
+
+        h3 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          line-height: 1.6;
+        }
+      }
+
+      .dream-text-2 {
+        background-color: none;
+        border: 3px solid $white;
+        padding: 5%;
+        border-radius: 10px;
+
+        .podcast {
+          iframe {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .cta-container {
+    border-radius: 10px;
+    background-color: $white;
+    margin: 3.5rem 0;
+    
+    padding: 3% 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 6%;
+
+    .cta-text-content {
+      h3 {
+        color: $primaryColor;
+        font-weight: 700;
+      }
+
+      p {
+        color: $black;
+      }
+    }
+  }
+
+  .faq {
+    margin-top: 7.5rem;
+    color: $white !important;
+
+    .faq-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .accordion {
+      --bs-accordion-bg: none !important;
+      color: $white !important;
+
+      .accordion-item {
+        padding: 2% 0;
+
+        .accordion-button {
+          color: $white !important;
+        }
+
+        .accordion-header {
+          font-size: 2.5rem;
+          font-weight: 700;
+        }
+        
+        .accordion-body {
+          color: $white !important;
+        }
+  
+        .accordion-button:not(.collapsed) {
+          background-color: transparent !important;
+          color: $white !important;
+        }
+  
+        .accordion-button:focus {
+          border: 0 !important;
+        }
+      }
+
+    }
+  }
 }

@@ -1,5 +1,6 @@
 class DreamsController < ApplicationController
   def new
+    @dreamlog = Dreamlog.find(params[:dreamlog_id])
     @dream = Dream.new
   end
 

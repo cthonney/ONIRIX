@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <script src="https://kit.fontawesome.com/96ed6a7e30.js" crossorigin="anonymous"></script>
   </head>
 
   <body
@@ -21,4 +22,7 @@
     <%= yield %>
   </div>
   </body>
+  <footer>
+  <%= render "shared/footer" %>
+  </footer>
 </html>
