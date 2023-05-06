@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "about", to: "pages#about"
   get "contact", to: "contacts#new"
+  resources :contacts, only: [:new, :create]
   get "blog", to: "pages#blog"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
