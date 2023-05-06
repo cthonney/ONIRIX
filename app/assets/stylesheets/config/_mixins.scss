@@ -1,4 +1,4 @@
-@mixin main-header-style {
+.main-header-style {
     color: $primaryColor;
     font-family: 'Open Sans', sans-serif;
     font-size: 7rem;
@@ -6,7 +6,7 @@
     line-height: 1;
 }
 
-@mixin main-header-style-w {
+.main-header-style-w {
     color: $white;
     font-family: 'Open Sans', sans-serif;
     font-size: 7rem;
@@ -14,39 +14,39 @@
     line-height: 1;
 }
 
-@mixin secondary-header-style {
+.secondary-header-style {
     color: $primaryColor;
     font-family: 'Open Sans', sans-serif;
     font-size: 3rem;
     font-weight: 700;
 }
 
-@mixin secondary-header-style-w {
+.secondary-header-style-w {
     color: $white;
     font-family: 'Open Sans', sans-serif;
     font-size: 3rem;
     font-weight: 700;
 }
 
-@mixin subtitle-style {
+.subtitle-style {
     color: $primaryColor;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 1.5rem;
 }
 
-@mixin subtitle-style-w {
+.subtitle-style-w {
     color: $white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 1.5rem;
 }
 
-@mixin main-cta-color {
+.main-cta-color {
     color: $white;
     background-color: $primaryColor;
     font-size: 1.25rem;
-    border-radius: 1rem;
+    border-radius: 4px;
     transition: all 0.3s ease;
 
     &:hover {
@@ -55,26 +55,26 @@
     }
 }
 
-@mixin main-cta-w {
+.main-cta-w {
     color: $primaryColor;
     background-color: $white;
     font-size: 1.25rem;
-    border-radius: 1rem;
+    border-radius: 4px;
     transition: all 0.3s ease;
 
     &:hover {
-        color: $primaryColor;
+        color: $white;
         transform: scale(1.1);
     }
 }
 
 
-@mixin secondary-cta {
+.secondary-cta {
     color: $white;
     background-color: $primaryColor;
     border: 2px solid $white;
     font-size: 1.25rem;
-    border-radius: 1rem;
+    border-radius: 4px;
     transition: all 0.3s ease;
 
     &:hover {
@@ -84,12 +84,12 @@
     }
 }
 
-@mixin secondary-cta-w {
+.secondary-cta-w {
     color: $primaryColor;
     background-color: $white;
     border: 2px solid $primaryColor;
     font-size: 1.25rem;
-    border-radius: 1rem;
+    border-radius: 4px;
     transition: all 0.3s ease;
 
     &:hover {
