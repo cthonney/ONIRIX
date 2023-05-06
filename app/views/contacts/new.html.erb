@@ -1,6 +1,6 @@
 <h1>Contact us</h1>
 
-<%= simple_form_for @contact, url: contact_path do |f| %>
+<%= simple_form_for @contact, url: contacts_path do |f| %>
   <%= f.input :name, label: 'Full name' %>
   <%= f.input :email, label: 'Email' %>
   <%= f.input :message, label: 'Message', as: :text %>
