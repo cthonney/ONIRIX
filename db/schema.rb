@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_06_075923) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_06_083457) do
+  create_table "dreamlogs", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_dreamlogs_on_user_id"
+  end
+
+  create_table "dreams", force: :cascade do |t|
+    t.integer "dreamlog_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dreamlog_id"], name: "index_dreams_on_dreamlog_id"
+  end
+
+  create_table "interpretations", force: :cascade do |t|
+    t.integer "dream_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dream_id"], name: "index_interpretations_on_dream_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -23,4 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_06_075923) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "dreamlogs", "users"
+  add_foreign_key "dreams", "dreamlogs"
+  add_foreign_key "interpretations", "dreams"
 end
