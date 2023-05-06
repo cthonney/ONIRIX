@@ -219,7 +219,7 @@ main .services .steps-card-container {
 main .services .steps-card-container .steps-card {
   width: 28%;
   min-width: 250px;
-  min-height: 300px;
+  min-height: 335px;
   border-radius: 10px;
   background-color: #EDF4FF;
   text-align: center;
@@ -302,6 +302,40 @@ main {
       }
 
       .about-oni-text-2 {
+        background-color: none;
+        border: 3px solid $white;
+        padding: 5%;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .dream {
+    margin: 4.5rem 0;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    .dream-content-inside {
+      .dream-text {
+        margin-bottom: 3.5rem;
+        background-color: $white;
+        border-radius: 10px;
+        padding: 5%;
+        color: $black;
+        margin-top: 2rem;
+
+        h3 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          line-height: 1.6;
+        }
+      }
+
+      .dream-text-2 {
         background-color: none;
         border: 3px solid $white;
         padding: 5%;
