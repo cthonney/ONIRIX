@@ -1,5 +1,5 @@
 // Specific CSS for your home-page
-$font_color: white;
+$font_color: rgb(230, 237, 246);
 $font_main: "Open Sans";
 $color_main: #040720;
 $color_accent: #6184D8;
@@ -103,9 +103,7 @@ $background: "http://bryce-snyder.com/assets/img/background.jpg";
 
 body.home {
   color: $font_color;
-  font-family: $font_main;
   font-weight: lighter;
-  overflow: hidden;
 
   &::before,
   &::after {
