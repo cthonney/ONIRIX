@@ -206,25 +206,34 @@ main .services h2 {
   font-weight: bold;
 }
 
-main .services .card-container {
+main .services .steps-card-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 900px;
+  min-width: 850px;
+  max-width: 1440px;
   margin-bottom: 3%;
 }
 
-main .services .card-container .card-m {
-  max-width: 150px;
-  text-align: center;
-}
-
-main .services .card-container .card-m img {
-  width: 150px;
-  aspect-ratio: 1;
+main .services .steps-card-container .steps-card {
+  width: 28%;
+  min-width: 250px;
+  min-height: 300px;
   border-radius: 10px;
-  margin-bottom: 2%;
-  object-fit: cover;
+  background-color: #EDF4FF;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 3%;
+
+  h3 {
+    color: $color_accent;
+    margin-bottom: 1%;
+    min-height: 120px;
+  }
+
+  p {
+    color: #040720;
+  }
 }
 
 main .container.quote {
