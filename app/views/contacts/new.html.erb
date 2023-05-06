@@ -1,2 +1,8 @@
-<h1>Contacts#new</h1>
-<p>Find me in app/views/contacts/new.html.erb</p>
+<h1>Contact us</h1>
+
+<%= simple_form_for @contact, url: contact_path do |f| %>
+  <%= f.input :name, label: 'Full name' %>
+  <%= f.input :email, label: 'Email' %>
+  <%= f.input :message, label: 'Message', as: :text %>
+  <%= f.button :submit, 'Send' %>
+<% end %>
