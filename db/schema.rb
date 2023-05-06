@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_06_083457) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_06_090205) do
   create_table "dreamlogs", force: :cascade do |t|
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
@@ -22,6 +22,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_06_083457) do
     t.integer "dreamlog_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "maincharacter"
+    t.string "location"
+    t.string "action"
+    t.text "description"
+    t.string "emotion"
     t.index ["dreamlog_id"], name: "index_dreams_on_dreamlog_id"
   end
 
@@ -40,6 +45,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_06_083457) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "gender"
+    t.string "occupation"
+    t.string "lovesituation"
+    t.string "age"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
