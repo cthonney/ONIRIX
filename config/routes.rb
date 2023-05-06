@@ -12,9 +12,11 @@ Rails.application.routes.draw do
     resources :dreams, only: [:new, :create, :index, :show]
   end
 
-  resources :dreams, only: [:edit, :update, :destroy]
+  resources :dreams, only: [:edit, :update, :destroy] do
+    resources :interpretations, only: [:new, :create, :index, :show]
+  end
   resources :interpretations, only: [:edit, :update, :destroy]
 
   get 'analyze', to: 'interpretations#analyze'
-
+  get 'discuss', to: 'interpretations#discuss'
 end
