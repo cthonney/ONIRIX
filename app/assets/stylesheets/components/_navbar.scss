@@ -1,0 +1,12 @@
+.navbar-chicken {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-chicken .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-chicken .navbar-brand img {
+  width: 40px;
+}
