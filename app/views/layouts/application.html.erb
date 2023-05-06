@@ -10,7 +10,12 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body><%= render "shared/navbar" %>
+  <body
+  <%# Display a class only if in the home action in pages controller %>
+  <% if controller_name == "pages" && action_name == "home" %>
+    class="home"
+  <% end %>
+  ><%= render "shared/navbar" %>
 <%= render "shared/flashes" %>
 
     <%= yield %>
