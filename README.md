@@ -8,9 +8,9 @@ This project is a collaboration between Onirix and The International Institute o
 - Onirix, is an advanced AI technology that can analyze and decode your dreams to predict your future.
   Using cutting-edge machine learning techniques, Onirix can decipher the complex language of dreams, helping users gain a deeper understanding of their own   thoughts, emotions, and experiences. Whether you're seeking guidance on your career path, your love life, or your health, Onirix has the potential to       revolutionize the way you understand and interpret your dreams.
  
- - DreamVault for storing your  dreams with analysis
+ - 🔒 DreamVault for storing your  dreams with analysis
  
- - Free Onirix hypnosis podcast on the Homepage
+ - 💤 Free Onirix hypnosis podcast on the Homepage
 
 ## Tech Stack
 
