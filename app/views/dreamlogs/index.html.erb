@@ -1,16 +1,28 @@
-.
-<h1>The DreamVault</h1>
+<div class="banner">
+  <h1>The DreamVault</h1>
+  <p>
+    The DreamVault is an innovative repository where users can store and manage their interpreted dreams using the advanced AI technology called Onirix. It is a secure and intuitive platform designed to help users keep track of their dream interpretations over time, and gain insights into their subconscious thoughts and emotions.
+  </p>
+  <br>
+  <p>
+    You have <strong><%= pluralize(@dreams.count, 'dream') %></strong> in your DreamVault.
+  </p>
+</div>
 
 <div class="dreams">
   <% @dreams.each do |dream| %>
     <div class="dream">
-      <h2>Dream analysed on: <%= dream.created_at.strftime("%d/%m/%Y") %>
+      <h2>Dream analysed on: <%= dream.created_at.strftime("%d/%m/%Y at %H:%M") %>
       </h2>
-      <p><%= dream.maincharacter %></p>
-      <p><%= dream.emotion %></p>
-      <p><%= dream.action %></p>
-      <p><%= dream.location %></p>
-      <p><%= dream.description %></p>
+      <p>The main character of your dream: <%= dream.maincharacter %></p>
+      <p>The main emotion of your dream: <%= dream.emotion %></p>
+      <p>The type of action in your dream: <%= dream.action %></p>
+      <p>The location of your dream: <%= dream.location %></p>
+      <% unless dream.description.blank? %>
+        <p>A small description of your dream: <%= dream.description %></p>
+      <% end %>
+
+      <h3>The Interpretation of your dream</h3>
       <% dream.interpretations.each do |interpretation| %>
         <p><%= interpretation.description %></p>
       <% end %>
