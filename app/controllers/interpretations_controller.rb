@@ -1,5 +1,9 @@
 class InterpretationsController < ApplicationController
   def analyze
+  end
+
+  def discuss
+    raise
     url = 'https://api.openai.com/v1/engines/text-davinci-003/completions'
     headers = {
       'Content-Type' => 'application/json',
@@ -14,13 +18,12 @@ class InterpretationsController < ApplicationController
       req.headers = headers
       req.body = body.to_json
     end
-    render json: JSON.parse(response.body)
-  end
+    # render json: JSON.parse(response.body)
 
-  def discuss
   end
 
   def new
+    @dream = Dream.find(params[:dream_id])
     @interpretation = Interpretation.new
   end
 

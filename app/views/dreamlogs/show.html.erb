@@ -1,8 +1,8 @@
 <div class="container personal-section"
-  data-controller='toggle-page'
+  data-controller='toggle-form'
 >
   <div class="step step-1 active"
-    data-toggle-page-target='step1'
+    data-toggle-form-target='step1'
   >
   <%= simple_form_for @personal_detail, url: personal_details_path(dreamlog_id: @dreamlog.id) do |f| %>
       <h2>Tell us more about yourself</h2>
@@ -14,11 +14,11 @@
         ["45-54", "45-54"],
         ["55+", "55+"]
       ], :second, :first %>
-        <button class="btn btn-primary" data-action='click->toggle-page#showStep2' >Next</button>
+        <button class="btn btn-primary" data-action='click->toggle-form#showStep2' >Next</button>
     <br>
   </div>
 
-    <div class="step step-2" data-toggle-page-target='step2'>
+    <div class="step step-2" data-toggle-form-target='step2'>
       <h2>Tell us more about yourself</h2>
       <p>What is your gender</p>
       <%= f.collection_radio_buttons :gender, [  ["Male", "Male"],
@@ -28,10 +28,10 @@
         ["I don't want to specify", "I don't want to specify"]
       ], :second, :first %>
 
-      <button class="btn btn-primary" data-action='click->toggle-page#showStep1'>Go Back</button>
-      <button class="btn btn-primary" data-action='click->toggle-page#showStep3'>Proceed</button>
+      <button class="btn btn-primary" data-action='click->toggle-form#showStep1'>Go Back</button>
+      <button class="btn btn-primary" data-action='click->toggle-form#showStep3'>Proceed</button>
     </div>
-    <div class="step step-3" data-toggle-page-target='step3'>
+    <div class="step step-3" data-toggle-form-target='step3'>
       <h2>What is your current occupation?</h2>
       <%= f.collection_radio_buttons :occupation, [  ["Student", "Student"],
         ["Employed", "Employed"],
@@ -40,11 +40,11 @@
         ["Retired", "Retired"],
         ["Other", "Other"]
       ], :second, :first %>
-      <button class="btn btn-primary" data-action='click->toggle-page#showStep2' >Go Back</button>
-      <button class="btn btn-primary" data-action='click->toggle-page#showStep4'>Proceed</button>
+      <button class="btn btn-primary" data-action='click->toggle-form#showStep2' >Go Back</button>
+      <button class="btn btn-primary" data-action='click->toggle-form#showStep4'>Proceed</button>
     </div>
 
-    <div class="step step-4" data-toggle-page-target='step4'>
+    <div class="step step-4" data-toggle-form-target='step4'>
       <h2>What is your current relationship status?</h2>
       <%= f.collection_radio_buttons :lovesituation, [  ["Single", "Single"],
         ["In a relationship", "In a relationship"],
@@ -54,7 +54,7 @@
         ["Happy with my cat", "Happy with my cat"],
         ["Other", "Other"]
       ], :second, :first %>
-      <button class="btn btn-primary" data-action='click->toggle-page#showStep3' >Go Back</button>
+      <button class="btn btn-primary" data-action='click->toggle-form#showStep3' >Go Back</button>
       <%= f.submit "Submit" %>
     </div>
     <% end %>

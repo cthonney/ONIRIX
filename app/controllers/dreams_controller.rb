@@ -22,7 +22,7 @@ class DreamsController < ApplicationController
     if @dream.save
       redirect_to new_dream_interpretation_path(@dream)
     else
-      render :new
+      redirect_to new_dreamlog_dream_path(@dreamlog)
     end
   end
 
