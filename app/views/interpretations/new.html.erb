@@ -17,5 +17,12 @@
     Further details for your dream: <%= @dream.description %>
   </div>
 </div>
-<div data-controller='dream-analysis'>
+<div
+  data-controller='dream-analysis'
+  data-dream-analysis-dream-value="<%= @dream.to_json %>"
+  data-dream-analysis-openai-Key-value="<%= ENV['OPEN_AI_API'] %>"
+>
+  <%= simple_form_for( [@dream, @interpretation], data:{dream_analysis_target: 'form'}) do |f| %>
+    <%= f.input :description %>
+  <% end %>
 </div>
