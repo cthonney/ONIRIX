@@ -14,7 +14,7 @@
 
   <body
   <%# Display a class only if in the home action in pages controller %>
-  <% if controller_name == "pages" %>
+  <% if (controller_name == "pages") || (controller_name == "sessions")|| (controller_name == "registrations") %>
     class="home"
   <% end %>
   ><%= render "shared/navbar" %>
