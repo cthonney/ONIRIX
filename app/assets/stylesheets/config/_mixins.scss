@@ -75,6 +75,20 @@
     }
 }
 
+.main-cta-color-onW-log {
+    color: $white;
+    background-color: $primaryColor;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $primaryColor;
+        transform: scale(1.1);
+        border: 2px solid $primaryColor;
+    }
+}
+
 .main-cta-color-BonW {
     color: $white;
     background-color: $primaryColor1;
