@@ -4,6 +4,14 @@
 
 This project is a collaboration between Onirix and The International Institute of Dreams, aimed at exploring the intersection between technology and dreams.
 
+## Features
+- Onirix, is an advanced AI technology that can analyze and decode your dreams to predict your future.
+  Using cutting-edge machine learning techniques, Onirix can decipher the complex language of dreams, helping users gain a deeper understanding of their own   thoughts, emotions, and experiences. Whether you're seeking guidance on your career path, your love life, or your health, Onirix has the potential to       revolutionize the way you understand and interpret your dreams.
+ 
+ - DreamVault for storing your  dreams with analysis
+ 
+ - Free Onirix hypnosis podcast on the Homepage
+
 ## Tech Stack
 
 Our project is built using the following technologies:
@@ -20,11 +28,8 @@ Our project is built using the following technologies:
 - Call to the OpenAI API without using a gem
 - Admin interface with RailsAdmin ( https://crazychicken.maurice.webcup.hodi.host/admin )
 
-## Features
-- Onirix, is an advanced AI technology that can analyze and decode your dreams to predict your future.
-  Using cutting-edge machine learning techniques, Onirix can decipher the complex language of dreams, helping users gain a deeper understanding of their own   thoughts, emotions, and experiences. Whether you're seeking guidance on your career path, your love life, or your health, Onirix has the potential to       revolutionize the way you understand and interpret your dreams.
- 
- - DreamVault for storing your  dreams with analysis
+
+
 
 
 
