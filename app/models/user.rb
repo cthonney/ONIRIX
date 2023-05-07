@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :dreamlogs, dependent: :destroy
   has_many :dreams, through: :dreamlogs
-  has_one_attached :avatar
   has_many :personal_details, dependent: :destroy
+  has_one_attached :avatar
 end
