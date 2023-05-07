@@ -23,6 +23,9 @@
             <%= link_to "Contact", "/contact", class: "nav-link" %>
         </li>
         <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Analyze My Dream", new_dreamlog_path, class: "nav-link" %>
+          </li>
           <li class="nav-item dropdown">
 
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,7 +45,7 @@
               <% if current_user.admin? %>
                 <%= link_to "Admin Platform", '/admin', class: "dropdown-item" %>
               <% end %>
-
+              <%= link_to "DreamVault", dreamlogs_path, class: "dropdown-item" %>
               <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
