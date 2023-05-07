@@ -8,13 +8,15 @@
   <%= simple_form_for [@dreamlog, @dream] do |f| %>
       <h1>Tell us more about your dream</h2>
       <h2>Who is the main character of your dream?</h2>
-
-      <%= f.collection_radio_buttons :maincharacter, [  ["You", "You"],
-        ["A person you know", "A person you know"],
-        ["A person you don't know", "A person you don't know"],
-        ["A fictional character", "A fictional character"],
-        ["An animal", "An animal"]
-      ], :second, :first %>
+      <div class="choices vertical">
+        <%= f.collection_radio_buttons :maincharacter, [  ["You", "You"],
+          ["A person you know", "A person you know"],
+          ["A person you don't know", "A person you don't know"],
+          ["A fictional character", "A fictional character"],
+          ["An animal", "An animal"]
+        ], :second, :first, input_html: { class: "tag-selector" },
+                        item_wrapper_class: 'tag-item' %>
+      </div>
 
         <button class="btn btn-primary" data-action='click->toggle-page#showStep2' >Next</button>
     <br>
@@ -23,33 +25,42 @@
     <div class="step step-2" data-toggle-page-target='step2'>
       <h2>Which of the following best describes the emotional status of your dream?
 </h2>
+    <div class="choices vertical">
       <%= f.collection_radio_buttons :emotion, [  ["Happy or joyful", "Happy or joyful"],
       ["Neutral or calm", "Neutral or calm"],
         ["Sad or depressed", "Sad or depressed"],
         ["Anxious or fearful", "Anxious or fearful"],
         ["Angry or frustrated", "Angry or frustrated"],
-      ], :second, :first %>
+      ], :second, :first, input_html: { class: "tag-selector" },
+                        item_wrapper_class: 'tag-item' %>
+    </div>
 
       <button class="btn btn-primary" data-action='click->toggle-page#showStep1'>Go Back</button>
       <button class="btn btn-primary" data-action='click->toggle-page#showStep3'>Proceed</button>
     </div>
     <div class="step step-3" data-toggle-page-target='step3'>
       <h2>Which of the following best describes the setting of your dream?</h2>
-      <%= f.collection_radio_buttons :location, [  ["A familiar place (e.g., your home, workplace, or school)", "A familiar place"],
-        ["An unfamiliar place (e.g., a new city or country)", "An unfamiliar place"],
-        ["A place you've never seen before (e.g., a fantastical or imaginary location)", "A place you've never seen before"]
-      ], :second, :first %>
+      <div class="choices vertical">
+        <%= f.collection_radio_buttons :location, [  ["A familiar place (e.g., your home, workplace, or school)", "A familiar place"],
+          ["An unfamiliar place (e.g., a new city or country)", "An unfamiliar place"],
+          ["A place you've never seen before (e.g., a fantastical or imaginary location)", "A place you've never seen before"]
+        ], :second, :first, input_html: { class: "tag-selector" },
+                          item_wrapper_class: 'tag-item' %>
+      </div>
       <button class="btn btn-primary" data-action='click->toggle-page#showStep2' >Go Back</button>
       <button class="btn btn-primary" data-action='click->toggle-page#showStep4'>Proceed</button>
     </div>
 
     <div class="step step-4" data-toggle-page-target='step4'>
       <h2>Which of the following best describes the actions or events in your dream?</h2>
-      <%= f.collection_radio_buttons :action, [
-        ["Mundane or ordinary activities (e.g., walking, eating, or talking with others)", "Mundane or ordinary activities"],
-        ["Unusual or fantastical activities  (e.g., flying, teleporting, or experiencing supernatural events)", "Unusual or fantastical activities"],
-        ["Troubling or distressing activities (e.g., being chased, attacked, or trapped)", "Troubling or distressing activities"],
-      ], :second, :first %>
+      <div class="choices vertical">
+        <%= f.collection_radio_buttons :action, [
+          ["Mundane or ordinary activities (e.g., walking, eating, or talking with others)", "Mundane or ordinary activities"],
+          ["Unusual or fantastical activities  (e.g., flying, teleporting, or experiencing supernatural events)", "Unusual or fantastical activities"],
+          ["Troubling or distressing activities (e.g., being chased, attacked, or trapped)", "Troubling or distressing activities"],
+        ], :second, :first, input_html: { class: "tag-selector" },
+                            item_wrapper_class: 'tag-item' %>
+      </div>
       <button class="btn btn-primary" data-action='click->toggle-page#showStep3' >Go Back</button>
       <button class="btn btn-primary" data-action='click->toggle-page#showStep5'>Proceed</button>
     </div>
