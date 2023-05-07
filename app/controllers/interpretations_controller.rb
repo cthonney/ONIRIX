@@ -3,7 +3,6 @@ class InterpretationsController < ApplicationController
   end
 
   def discuss
-    raise
     url = 'https://api.openai.com/v1/engines/text-davinci-003/completions'
     headers = {
       'Content-Type' => 'application/json',

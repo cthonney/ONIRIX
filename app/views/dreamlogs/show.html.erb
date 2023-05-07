@@ -4,7 +4,7 @@
   <div class="step step-1 active"
     data-toggle-form-target='step1'
   >
-  <%= simple_form_for @personal_detail, url: personal_details_path(dreamlog_id: @dreamlog.id) do |f| %>
+  <%= simple_form_for(@personal_detail, url: personal_details_path(dreamlog_id: @dreamlog.id), data:{turbo: false}) do |f| %>
       <h2>Tell us more about yourself</h2>
       <p>What is your age?</p>
       <div class="choices">
