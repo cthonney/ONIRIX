@@ -1,5 +1,6 @@
 <div class="container personal-section"
   data-controller='toggle-page'
+  id='personal-section'
 >
   <div class="step step-1 active"
     data-toggle-page-target='step1'
@@ -21,8 +22,9 @@
 
     <div class="step step-2" data-toggle-page-target='step2'>
       <h2>Which of the following best describes the emotional status of your dream?
-Happy or joyful:</h2>
-      <%= f.collection_radio_buttons :emotion, [  ["Neutral or calm", "Neutral or calm"],
+</h2>
+      <%= f.collection_radio_buttons :emotion, [  ["Happy or joyful", "Happy or joyful"],
+      ["Neutral or calm", "Neutral or calm"],
         ["Sad or depressed", "Sad or depressed"],
         ["Anxious or fearful", "Anxious or fearful"],
         ["Angry or frustrated", "Angry or frustrated"],
@@ -55,7 +57,7 @@ Happy or joyful:</h2>
       <h2>Any more details about your dream that you remember or want to share:</h2>
       <%= f.input :description  %>
       <button class="btn btn-primary" data-action='click->toggle-page#showStep4' >Go Back</button>
-      <%= f.submit "Analyze Your Dream" %>
+      <%= f.submit "Analyze Your Dream", data: { action: "click->toggle-page#submitForm" } %>
     </div>
     <% end %>
 

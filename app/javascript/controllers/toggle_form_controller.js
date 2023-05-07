@@ -47,7 +47,7 @@ export default class extends Controller {
 
   submitForm(event) {
     event.preventDefault()
-    let form = document.querySelector('.step-3 form')
+    let form = document.querySelector('.personal-section .step-3 form')
     form.submit()
   }
 }

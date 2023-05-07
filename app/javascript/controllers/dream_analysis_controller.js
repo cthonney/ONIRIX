@@ -16,7 +16,7 @@ export default class extends Controller {
     const dreamInput = `Interpret this dream: ${dream.maincharacter} doing ${dream.action} in ${dream.location}. the emotion of the dreamer was ${dream.emotion}. ${dream.description === "" ? "" : "The dreamer described the dream as: " + dream.description + "."}`
     console.log(dreamInput)
 
-    fetch('https://api.openai.com/v1/completion', {
+    fetch('https://api.openai.com/v1/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,9 +30,20 @@ export default class extends Controller {
     })
     }).then(response => response.json())
     .then((data) => {
-      console.log('data from open AI', data)
       const interpretationForm = document.querySelector('#interpretation_description')
       interpretationForm.value = data.choices[0].text
+
+      const options = {
+        strings: [data.choices[0].text],
+        typeSpeed: 1,
+        loop: false,
+        onComplete: (self) => {
+          this.buttonBoxTarget.classList.remove('d-none')
+        }
+      };
+
+      this.typed = new Typed(this.interpretationTarget, options);
+      // this.interpretationTarget.textContent = data.choices[0].text
     }).catch((error) => {
 
       const data = {
@@ -64,7 +75,6 @@ export default class extends Controller {
         typeSpeed: 1,
         loop: false,
         onComplete: (self) => {
-          console.log('Im done, me is happy')
           this.buttonBoxTarget.classList.remove('d-none')
         }
       };
@@ -80,6 +90,12 @@ export default class extends Controller {
     this.interpretationTarget.textContent = ""
     this.buttonBoxTarget.classList.add('d-none')
     this.connect()
+  }
+
+  submitForm(event) {
+    event.preventDefault()
+    let form = document.querySelector('#dream-analysis form')
+    form.submit()
   }
 
   disconnect() {
