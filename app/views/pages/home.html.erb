@@ -5,7 +5,7 @@
                     <h1 class="">Discover the power of your subconscious mind with Onirix!</h1>
                     <p>Get 99% accurate prediction from your dream with Onirix AI ✨</p>
                     <div class="d-grid gap-2 d-md-block">
-                        <a href="#" class="btn main-cta-w">Get Started</a>
+                        <%= link_to "Get Started", new_dreamlog_path, class: "btn main-cta-w" %>
                         <a href="#about" class="btn secondary-cta ms-3">About</a>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                         <br>
                         <p>Using cutting-edge machine learning techniques, Onirix can decipher the complex language of dreams, helping users gain a deeper understanding of their own thoughts, emotions, and experiences. Whether you're seeking guidance on your career path, your love life, or your health, Onirix has the potential to revolutionize the way you understand and interpret your dreams.</p>
                         <br>
-                        <a href="#" class="btn main-cta-color-onW">Try now</a>
+                        <%= link_to "Try Onirix AI Now", new_dreamlog_path, class: "btn main-cta-color-onW" %>
                     </article>
 
                     <article class="about-oni-text-2">
@@ -32,7 +32,7 @@
                             <p>We at the International Institute of Dreams are proud to be a world-renowned organization dedicated to studying and understanding the complex nature of human dreams. Using sophisticated algorithms and machine learning techniques, Onirix is able to identify patterns and correlations in dream content, helping users gain a deeper understanding of their own thoughts, emotions, and experiences.</p>
                             <br>
                             <p>As a leader in dream studies, we are committed to pushing the boundaries of science and technology, helping us unlock the secrets of our subconscious mind and achieve a better understanding of ourselves and the world around us.</p>
-                            <%= link_to "Get in touch", "/contact", class: "btn secondary-cta" %>
+                            <%= link_to "Get In Touch", "/contact", class: "btn secondary-cta" %>
                         </div>
                         <%= image_tag "logo-iid.svg" %>
                     </article>
@@ -66,16 +66,15 @@
 
         <section class="dream" id="Dream">
             <div class="dream-content">
-                <h2 class="secondary-header-style-wh3">What is a dream ?</h2>
+                <h2 class="secondary-header-style-wh3">What's the difference between Dreams & Nightmares?</h2>
                 <div class="dream-content-inside">
                     <article class="dream-text">
-                        <h3>Let's talk about dreams !</h3>
-                        <p>Dreams and nightmares are both experiences that occur during sleep, but they differ in their emotional content.</p>
+                        <h3>Dreams and nightmares are both experiences that occur during sleep, but they differ in their emotional content.</h3>
                         <br>
                         <p>Dreams are generally pleasant or neutral, while nightmares are distressing and can cause feelings of fear, anxiety, or sadness. Recurrent nightmares can be a sign of psychological distress and should be taken seriously.</p>
                         <br>
-                        <p>If you or someone you know experiences recurrent nightmares, it is important to seek professional psychological help to address any underlying issues and prevent further emotional harm.</p>
-                        <a href="https://www.medecin.mu/" class="btn main-cta-color-onW" target="_blank">Find Help</a>
+                        <p>🟣<b>Are your nightmares keeping you up at night? <br>Recurrent nightmares can be a sign of underlying psychological distress. Don't suffer in silence, seek help today and get a good night's sleep.</b>🟣</p>
+                        <a href="https://www.medecin.mu/" class="btn main-cta-color-onW" target="_blank">Talk To A Professional</a>
                     </article>
 
                     <article class="dream-text-2">
@@ -99,23 +98,23 @@
 
         <section class="personas">
             <div class="oni-who">
-                <h2>Who is it for ?</h2>
+                <h2>Who should use Onirix ?</h2>
                 <div class="oni-who-card-container">
                     <article class="oni-who-card">
                         <i class="fa-sharp fa-solid fa-thought-bubble" style="color: #6184d8;"></i>
-                        <h3>Explorer</h3>
+                        <h3>The Explorer</h3>
                         <p>You are intrigued by the world of dreams and wants to delve deeper into your subconscious mind. Use Onirix to gain insights into your dreams and explore their hidden meanings, allowing you to better understand yoursel and your innermost desires.</p>
                     </article>
 
                     <article class="oni-who-card">
                         <i class="fa-sharp fa-solid fa-thought-bubble" style="color: #6184d8;"></i>
-                        <h3>Go-Getter</h3>
+                        <h3>The Go-Getter</h3>
                         <p>You are driven to achieve your goals and wants to gain a competitive edge in your personal or professional life. Use Onirix to gain insights into your subconscious mind and potential future outcomes, allowing you to make more informed decisions and take proactive steps to shape your future.</p>
                     </article>
 
                     <article class="oni-who-card">
                         <i class="fa-sharp fa-solid fa-thought-bubble" style="color: #6184d8;"></i>
-                        <h3>Creative Thinker</h3>
+                        <h3>The Creative Thinker</h3>
                         <p>You have an artist or creative mindset and you are seeking inspiration for your work. Use Onirix to gain insights into your dreams and tap into your subconscious creativity, allowing you to unlock new ideas and express yourself in innovative ways.</p>
                     </article>
                 </div>
@@ -130,7 +129,8 @@
                 <h3>Dream big, dream clear !</h3>
                 <p>Let Onirix be your guide as you explore the depths of your subconscious and unlock the full potential of your dreams.</p>
             </div>
-            <a href="#" class="btn main-cta-color-BonW">Start Now</a>
+            <%= link_to "Analyze Your Dream Now", new_dreamlog_path, class: "btn main-cta-color-BonW" %>
+
         </section>
 
         <section class="faq">
