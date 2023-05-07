@@ -89,6 +89,21 @@
     }
 }
 
+.main-cta-color-BonWup {
+    color: $white;
+    background-color: $primaryColor1;
+    border: 1px solid $primaryColor1;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $primaryColor1;
+        transform: scale(1.1);
+        border: 1px solid $primaryColor1;
+    }
+}
+
 .main-cta-w {
     color: $primaryColor;
     background-color: $white;
@@ -112,6 +127,19 @@
 
     &:hover {
         color: $primaryColor;
+        background-color: $white;
+    }
+}
+
+.secondary-cta-sign {
+    color: $white;
+    border: 1px solid $white;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $primaryColor1;
         background-color: $white;
     }
 }
