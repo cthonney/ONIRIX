@@ -1,8 +1,9 @@
 import { Controller } from "@hotwired/stimulus"
+import Typed from 'typed.js';
 
 // Connects to data-controller="dream-analysis"
 export default class extends Controller {
-  static targets = ["form"]
+  static targets = ["form", "interpretation"]
   static values = {
     dream: Object,
     openaiKey: String
@@ -15,7 +16,7 @@ export default class extends Controller {
     const dreamInput = `Interpret this dream: ${dream.maincharacter} doing ${dream.action} in ${dream.location}. the emotion of the dreamer was ${dream.emotion}. ${dream.description === "" ? "" : "The dreamer described the dream as: " + dream.description + "."}`
     console.log(dreamInput)
 
-    fetch('https://api.openai.com/v1/completions', {
+    fetch('https://api.openai.com/v1/completion', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,8 +34,6 @@ export default class extends Controller {
       const interpretationForm = document.querySelector('#interpretation_description')
       interpretationForm.value = data.choices[0].text
     }).catch((error) => {
-      console.error('Error:', error);
-
 
       const data = {
         "id": "cmpl-7DOTmcu7RyQtFhh6uzEVJpwEARPL9",
@@ -57,12 +56,28 @@ export default class extends Controller {
       }
 
 
+      const interpretationForm = document.querySelector('#interpretation_description')
+      interpretationForm.value = data.choices[0].text
 
+      const options = {
+        strings: [data.choices[0].text],
+        typeSpeed: 100,
+        loop: false,
+        onComplete: (self) => {
+          console.log('Im done, me is happy')
+        }
+      };
 
+      this.typed = new Typed(this.interpretationTarget, options);
+      // this.interpretationTarget.textContent = data.choices[0].text
 
 
 
 
     })
+  }
+
+  disconnect() {
+    this.typed.destroy();
   }
 }

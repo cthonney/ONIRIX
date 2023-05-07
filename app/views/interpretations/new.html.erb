@@ -22,7 +22,8 @@
   data-dream-analysis-dream-value="<%= @dream.to_json %>"
   data-dream-analysis-openai-Key-value="<%= ENV['OPEN_AI_API'] %>"
 >
+  <div data-dream-analysis-target='interpretation' id='ai-interpretation'></div>
   <%= simple_form_for( [@dream, @interpretation], data:{dream_analysis_target: 'form'}) do |f| %>
-    <%= f.input :description %>
+    <%= f.hidden_field :description %>
   <% end %>
 </div>

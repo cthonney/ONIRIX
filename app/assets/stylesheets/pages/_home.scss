@@ -101,6 +101,10 @@ $background: "http://bryce-snyder.com/assets/img/background.jpg";
   }
 }
 
+.typed-cursor {
+  display: none !important;
+}
+
 body.home {
   color: $font_color;
   font-weight: lighter;
