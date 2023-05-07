@@ -139,8 +139,7 @@
     transition: all 0.3s ease;
 
     &:hover {
-        color: $primaryColor1;
-        background-color: $white;
+        transform: scale(1.1);
     }
 }
 
