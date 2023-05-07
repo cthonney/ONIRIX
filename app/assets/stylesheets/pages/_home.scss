@@ -5,7 +5,6 @@ $color_main: #040720;
 $color_accent: #6184D8;
 $color_secondary: #EDAE49;
 $color_secondary_accent: #FF1654;
-$background: "http://bryce-snyder.com/assets/img/background.jpg";
 
 @mixin grayscale($percent) {
   -webkit-filter: grayscale($percent);
@@ -115,17 +114,6 @@ body.home {
     top: 0;
     left: 0;
     z-index: -1;
-  }
-
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-image: url($background);
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    @include grayscale(100%);
   }
 
   &::after {
@@ -278,13 +266,13 @@ main {
     @media only screen and (min-width: 1200px) {
       min-height: 335px;
     }
-  
+
     h3 {
       color: $color_accent;
       margin-bottom: 1.5rem;
       text-align: left;
     }
-  
+
     p {
       color: #040720;
       text-align: left;
@@ -460,7 +448,7 @@ main {
           height: auto;
           margin-bottom: 2rem;
         }
-    
+
         @media only screen and (min-width: 1200px) {
           min-height: 400px;
         }
@@ -470,7 +458,7 @@ main {
           margin-bottom: 1.5rem;
           text-align: left;
         }
-      
+
         p {
           color: #040720;
           text-align: left;
@@ -483,7 +471,7 @@ main {
     border-radius: 10px;
     background-color: $white;
     margin: 3.5rem 0;
-    
+
     padding: 3% 5%;
     display: flex;
     justify-content: space-between;
@@ -526,21 +514,37 @@ main {
           font-size: 2.5rem;
           font-weight: 700;
         }
-        
+
         .accordion-body {
           color: $white !important;
         }
-  
+
         .accordion-button:not(.collapsed) {
           background-color: transparent !important;
           color: $white !important;
         }
-  
+
         .accordion-button:focus {
           border: 0 !important;
         }
       }
 
+    }
+  }
+}
+
+.dreams {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .dream {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    color: #040720;
+    padding: 2rem;
+
+    p {
+      font-weight: 400;
     }
   }
 }
