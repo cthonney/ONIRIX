@@ -11,16 +11,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", "/", class: "nav-link" %>
         </li>
         <li class="nav-item active">
-            <%= link_to "About", "#", class: "nav-link" %>
+            <%= link_to "About", "/about", class: "nav-link" %>
         </li>
         <li class="nav-item active">
-            <%= link_to "Blog", "#", class: "nav-link" %>
+            <%= link_to "Blog", "/blog", class: "nav-link" %>
         </li>
         <li class="nav-item active">
-            <%= link_to "Contact", "#", class: "nav-link" %>
+            <%= link_to "Contact", "/contact", class: "nav-link" %>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
@@ -43,7 +43,10 @@
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
-        <% else %>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+          </li>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
