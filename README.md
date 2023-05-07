@@ -13,6 +13,7 @@ Our project is built using the following technologies:
 - Stimulus Rails for JavaScript
 - Cloudinary for avatar image
 - Recaptcha v3 with v2 backup
+- Call to the OpenAI API without using a gem
 - Passenger Web server on cPanel
 - Hodi.host
 
