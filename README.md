@@ -7,7 +7,7 @@ This project is a collaboration between Onirix and The International Institute o
 ## Tech Stack
 
 Our project is built using the following technologies:
-
+- Hodi.host
 - Ruby on Rails 7.04
 - Ruby 3.1.3
 - Saasc Rails
@@ -16,6 +16,6 @@ Our project is built using the following technologies:
 - Recaptcha v3 with v2 backup
 - Call to the OpenAI API without using a gem
 - Passenger Web server on cPanel
-- Hodi.host
+- Admin interface with RailsAdmin ( https://crazychicken.maurice.webcup.hodi.host/admin )
 
 
