@@ -26,7 +26,7 @@ Our project is built using the following technologies:
 - Cloudinary API for avatar image
 - Recaptcha API v3 with v2 backup
 - Call to the OpenAI API without using a gem
-- Admin interface with RailsAdmin ( https://crazychicken.maurice.webcup.hodi.host/admin )
+- Admin interface with RailsAdmin ( Click on the avatar for access )
 
 
 
