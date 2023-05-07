@@ -56,4 +56,12 @@ class PagesController < ApplicationController
       }
     ]
   end
+
+  def tac
+  end
+
+  def policies
+  end
+
+
 end
