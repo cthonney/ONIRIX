@@ -20,10 +20,14 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "last_name" }%>
-      <%= f.file_field :avatar,
-      placeholder: 'Upload picture',
-      class: 'btn main-cta-color-BonWup',
-      direct_upload: true %>
+      <div class="btn main-cta-color-BonWup" id="file-field">
+          <label for="file-input">
+            <span class="fas fa-camera tag"> Upload your profile picture</span>
+          </label>
+          <%= f.file_field :avatar,
+                          id:"file-input",
+                          direct_upload: true%>
+        </div>
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
