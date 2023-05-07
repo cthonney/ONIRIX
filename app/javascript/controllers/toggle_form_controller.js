@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="toggle-page"
 export default class extends Controller {
 
-  static targets = ["step1", "step2", "step3", "step4", "step5"]
+  static targets = ["step1", "step2", "step3", "step4"]
 
   connect() {
     console.log("Hello, Stimulus!", this.element)
@@ -40,23 +40,14 @@ export default class extends Controller {
     event.preventDefault()
     this.step3Target.classList.remove("active")
     this.step4Target.classList.add("active")
-    this.step5Target.classList.remove("active")
 
-    // this.progressTarget.setAttribute("aria-valuenow", "100")
-    // this.progressTarget.style.width = "100%"
-  }
-
-  showStep5(event) {
-    event.preventDefault()
-    this.step4Target.classList.remove("active")
-    this.step5Target.classList.add("active")
     // this.progressTarget.setAttribute("aria-valuenow", "100")
     // this.progressTarget.style.width = "100%"
   }
 
   submitForm(event) {
     event.preventDefault()
-    let form = document.querySelector('.personal-section form')
+    let form = document.querySelector('.personal-section .step-3 form')
     form.submit()
   }
 }

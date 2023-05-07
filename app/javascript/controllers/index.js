@@ -4,8 +4,14 @@
 
 import { application } from "./application"
 
+import DreamAnalysisController from "./dream_analysis_controller"
+application.register("dream-analysis", DreamAnalysisController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ToggleFormController from "./toggle_form_controller"
+application.register("toggle-form", ToggleFormController)
 
 import TogglePageController from "./toggle_page_controller"
 application.register("toggle-page", TogglePageController)

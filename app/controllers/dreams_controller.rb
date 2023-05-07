@@ -15,4 +15,21 @@ class DreamsController < ApplicationController
     @interpretation = Interpretation.new
   end
 
+  def create
+    @dreamlog = Dreamlog.find(params[:dreamlog_id])
+    @dream = Dream.new(dream_params)
+    @dream.dreamlog = @dreamlog
+    if @dream.save
+      redirect_to new_dream_interpretation_path(@dream)
+    else
+      redirect_to new_dreamlog_dream_path(@dreamlog)
+    end
+  end
+
+  private
+
+  def dream_params
+    params.require(:dream).permit(:maincharacter, :location, :action, :description, :emotion)
+  end
+
 end

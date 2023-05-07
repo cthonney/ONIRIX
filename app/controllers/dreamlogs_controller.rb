@@ -1,6 +1,6 @@
 class DreamlogsController < ApplicationController
   def index
-    @dreamlogs = current_user.dreamlogs
+    @dreams = current_user.dreams.reject { |dream| dream.interpretations.empty? }
   end
 
   def show

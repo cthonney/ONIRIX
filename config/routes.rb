@@ -22,10 +22,10 @@ Rails.application.routes.draw do
 
   resources :dreams, only: [:edit, :update, :destroy] do
     resources :interpretations, only: [:new, :create, :index, :show]
+    get 'analyze', to: 'interpretations#analyze'
   end
   resources :interpretations, only: [:edit, :update, :destroy]
   resources :personal_details, only: [:create, :edit, :update, :destroy]
 
-  get 'analyze', to: 'interpretations#analyze'
   get 'discuss', to: 'interpretations#discuss'
 end

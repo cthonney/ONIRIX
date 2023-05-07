@@ -1,0 +1,18 @@
+<h1>The DreamVault</h1>
+
+<div class="dreams">
+  <% @dreams.each do |dream| %>
+    <div class="dream">
+      <h2>Dream analysed on: <%= dream.created_at.strftime("%d/%m/%Y") %>
+      </h2>
+      <p><%= dream.maincharacter %></p>
+      <p><%= dream.emotion %></p>
+      <p><%= dream.action %></p>
+      <p><%= dream.location %></p>
+      <p><%= dream.description %></p>
+      <% dream.interpretations.each do |interpretation| %>
+        <p><%= interpretation.description %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>

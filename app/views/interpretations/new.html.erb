@@ -1,0 +1,36 @@
+<h1>The interpretation of dreams</h1>
+<div>
+  <h2>Analyzing your dream</h2>
+  <div>
+    The main persona: <%= @dream.maincharacter %>
+  </div>
+  <div>
+    The emotion of your dream: <%= @dream.emotion %>
+  </div>
+  <div>
+    The action of your dream: <%= @dream.emotion %>
+  </div>
+  <div>
+    The location of your dream: <%= @dream.location %>
+  </div>
+  <div>
+    Further details for your dream: <%= @dream.description %>
+  </div>
+</div>
+<div
+  data-controller='dream-analysis'
+  data-dream-analysis-dream-value="<%= @dream.to_json %>"
+  data-dream-analysis-openai-Key-value="<%= ENV['OPEN_AI_API'] %>"
+  id='dream-analysis'
+>
+  <div data-dream-analysis-target='interpretation' id='ai-interpretation'></div>
+  <%= simple_form_for( [@dream, @interpretation], data:{dream_analysis_target: 'form'}) do |f| %>
+    <%= f.hidden_field :description %>
+    <div class='d-none' data-dream-analysis-target='buttonBox'>
+      <%= f.submit "Save Interpretation", data: { action: "click->dream-analysis#submitForm" } %>
+      <button data-action='click->dream-analysis#regenerate'>
+        Regenerate Interpretation
+      </button>
+    </div>
+  <% end %>
+</div>
