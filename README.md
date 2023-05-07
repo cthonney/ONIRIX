@@ -10,7 +10,7 @@ Our project is built using the following technologies:
 - Hodi.host
 - Ruby on Rails 7.04
 - Ruby 3.1.3
-- Saasc Rails
+- Saasc Rails for integrates the C implementation of Sass, LibSass, into the asset pipeline.
 - Stimulus Rails for JavaScript
 - Devise for login
 - Sqlite3 for Database
