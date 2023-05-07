@@ -7,53 +7,64 @@
   <%= simple_form_for @personal_detail, url: personal_details_path(dreamlog_id: @dreamlog.id) do |f| %>
       <h2>Tell us more about yourself</h2>
       <p>What is your age?</p>
-      <%= f.collection_radio_buttons :age, [  ["Under 18", "< 18"],
-        ["18-24", "18-24"],
-        ["25-34", "25-34"],
-        ["35-44", "35-44"],
-        ["45-54", "45-54"],
-        ["55+", "55+"]
-      ], :second, :first %>
+      <div class="choices">
+        <%= f.collection_radio_buttons :age, [
+          ["18-24", "18-24"],
+          ["25-34", "25-34"],
+          ["35-44", "35-44"],
+          ["45-54", "45-54"],
+          ["55+", "55+"]
+        ], :second, :first, input_html: { class: "tag-selector" },
+                    item_wrapper_class: 'tag-item' %>
+      </div>
         <button class="btn btn-primary" data-action='click->toggle-form#showStep2' >Next</button>
-    <br>
   </div>
 
     <div class="step step-2" data-toggle-form-target='step2'>
       <h2>Tell us more about yourself</h2>
       <p>What is your gender</p>
-      <%= f.collection_radio_buttons :gender, [  ["Male", "Male"],
-        ["Female", "Female"],
-        ["LGBTQIA+", "LGBTQIA+"],
-        ["Apache Helicopter", "Apache Helicopter"],
-        ["I don't want to specify", "I don't want to specify"]
-      ], :second, :first %>
+      <div class="choices vertical">
+        <%= f.collection_radio_buttons :gender, [  ["Male", "Male"],
+          ["Female", "Female"],
+          ["LGBTQIA+", "LGBTQIA+"],
+          ["Apache Helicopter", "Apache Helicopter"],
+          ["I don't want to specify", "I don't want to specify"]
+        ], :second, :first, input_html: { class: "tag-selector" },
+                    item_wrapper_class: 'tag-item' %>
+      </div>
 
       <button class="btn btn-primary" data-action='click->toggle-form#showStep1'>Go Back</button>
       <button class="btn btn-primary" data-action='click->toggle-form#showStep3'>Proceed</button>
     </div>
     <div class="step step-3" data-toggle-form-target='step3'>
       <h2>What is your current occupation?</h2>
-      <%= f.collection_radio_buttons :occupation, [  ["Student", "Student"],
-        ["Employed", "Employed"],
-        ["Unemployed", "Unemployed"],
-        ["House Work", "House Work"],
-        ["Retired", "Retired"],
-        ["Other", "Other"]
-      ], :second, :first %>
+      <div class="choices vertical">
+        <%= f.collection_radio_buttons :occupation, [  ["Student", "Student"],
+          ["Employed", "Employed"],
+          ["Unemployed", "Unemployed"],
+          ["House Work", "House Work"],
+          ["Retired", "Retired"],
+          ["Other", "Other"]
+        ], :second, :first, input_html: { class: "tag-selector" },
+                    item_wrapper_class: 'tag-item' %>
+      </div>
       <button class="btn btn-primary" data-action='click->toggle-form#showStep2' >Go Back</button>
       <button class="btn btn-primary" data-action='click->toggle-form#showStep4'>Proceed</button>
     </div>
 
     <div class="step step-4" data-toggle-form-target='step4'>
       <h2>What is your current relationship status?</h2>
-      <%= f.collection_radio_buttons :lovesituation, [  ["Single", "Single"],
-        ["In a relationship", "In a relationship"],
-        ["Married", "Married"],
-        ["Divorced", "Divorced"],
-        ["Widowed", "Widowed"],
-        ["Happy with my cat", "Happy with my cat"],
-        ["Other", "Other"]
-      ], :second, :first %>
+      <div class="choices vertical">
+        <%= f.collection_radio_buttons :lovesituation, [  ["Single", "Single"],
+          ["In a relationship", "In a relationship"],
+          ["Married", "Married"],
+          ["Divorced", "Divorced"],
+          ["Widowed", "Widowed"],
+          ["Happy with my cat", "Happy with my cat"],
+          ["Other", "Other"]
+        ], :second, :first, input_html: { class: "tag-selector" },
+                      item_wrapper_class: 'tag-item' %>
+      </div>
       <button class="btn btn-primary" data-action='click->toggle-form#showStep3' >Go Back</button>
       <%= f.submit "Submit" %>
     </div>
