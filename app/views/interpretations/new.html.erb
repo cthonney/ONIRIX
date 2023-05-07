@@ -25,5 +25,11 @@
   <div data-dream-analysis-target='interpretation' id='ai-interpretation'></div>
   <%= simple_form_for( [@dream, @interpretation], data:{dream_analysis_target: 'form'}) do |f| %>
     <%= f.hidden_field :description %>
+    <div class='d-none' data-dream-analysis-target='buttonBox'>
+      <%= f.submit "Save Interpretation" %>
+      <button data-action='click->dream-analysis#regenerate'>
+        Regenerate Interpretation
+      </button>
+    </div>
   <% end %>
 </div>

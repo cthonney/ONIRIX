@@ -3,7 +3,7 @@ import Typed from 'typed.js';
 
 // Connects to data-controller="dream-analysis"
 export default class extends Controller {
-  static targets = ["form", "interpretation"]
+  static targets = ["form", "interpretation", "buttonBox"]
   static values = {
     dream: Object,
     openaiKey: String
@@ -61,20 +61,25 @@ export default class extends Controller {
 
       const options = {
         strings: [data.choices[0].text],
-        typeSpeed: 100,
+        typeSpeed: 1,
         loop: false,
         onComplete: (self) => {
           console.log('Im done, me is happy')
+          this.buttonBoxTarget.classList.remove('d-none')
         }
       };
 
       this.typed = new Typed(this.interpretationTarget, options);
       // this.interpretationTarget.textContent = data.choices[0].text
-
-
-
-
     })
+  }
+
+  regenerate(event) {
+    event.preventDefault()
+    this.typed.destroy();
+    this.interpretationTarget.textContent = ""
+    this.buttonBoxTarget.classList.add('d-none')
+    this.connect()
   }
 
   disconnect() {
