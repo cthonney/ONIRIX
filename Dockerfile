@@ -8,6 +8,10 @@ FROM ruby:3.1.3
 # - postgresql-client: Communicate with postgres DB
 RUN apt-get update && apt-get install -y build-essential nodejs default-libmysqlclient-dev postgresql-client curl git libpq-dev
 
+# Install Node.js 14.x
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
+
+
 # Install Yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | tee /usr/share/keyrings/yarnkey.gpg >/dev/null \
     && echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
@@ -18,7 +22,7 @@ WORKDIR /myapp
 
 # Set SECRET_KEY_BASE to a placeholder value
 # This is not suitable for production use
-# ENV SECRET_KEY_BASE=dumb
+ENV SECRET_KEY_BASE=dumb
 ENV RAILS_ENV production
 ENV RAILS_LOG_TO_STDOUT 1
 
