@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_05_07_003310) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -48,14 +51,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_07_003310) do
   end
 
   create_table "dreamlogs", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_dreamlogs_on_user_id"
   end
 
   create_table "dreams", force: :cascade do |t|
-    t.integer "dreamlog_id", null: false
+    t.bigint "dreamlog_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "maincharacter"
@@ -67,7 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_07_003310) do
   end
 
   create_table "interpretations", force: :cascade do |t|
-    t.integer "dream_id", null: false
+    t.bigint "dream_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
@@ -79,7 +82,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_07_003310) do
     t.string "gender"
     t.string "lovesituation"
     t.string "age"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_personal_details_on_user_id"
