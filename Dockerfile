@@ -26,7 +26,7 @@ ENV RAILS_LOG_TO_STDOUT 1
 COPY Gemfile Gemfile.lock ./
 
 # Install the bundler version as in Gemfile.lock and bundle install
-RUN gem install bundler:2.3.8 && \
+RUN gem install bundler:2.4.12 && \
     bundle config set --local without 'development test' && \
     bundle install
 
