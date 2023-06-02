@@ -43,7 +43,7 @@ COPY . /myapp
 
 
 # Precompile Rails assets
-# RUN bundle exec rails assets:precompile
+RUN bundle exec rails assets:precompile
 
 # Copy the entrypoint script into the image
 COPY entrypoint.sh /usr/bin/
