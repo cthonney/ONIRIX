@@ -25,6 +25,7 @@ WORKDIR /myapp
 ENV SECRET_KEY_BASE=dumb
 ENV RAILS_ENV production
 ENV RAILS_LOG_TO_STDOUT 1
+ENV RAILS_SERVE_STATIC_FILES 1
 
 
 # Copy the Gemfile and Gemfile.lock into the image and install gems before the app code is copied into the image
