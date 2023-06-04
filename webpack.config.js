@@ -7,6 +7,9 @@ const devtool = process.env.NODE_ENV === "production" ? false : "source-map";
 // mode based on environment
 const mode = process.env.NODE_ENV === "production" ? "production" : "development";
 
+// TerserPlugin configuration based on environment
+const minimizer = process.env.NODE_ENV === "production" ? [new TerserPlugin()] : [];
+
 module.exports = {
   mode: mode,
   devtool: devtool,
@@ -18,8 +21,8 @@ module.exports = {
     path: path.resolve(__dirname, "app/assets/builds"),
   },
   optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
+    minimize: process.env.NODE_ENV === "production",
+    minimizer: minimizer,
   },
   plugins: [
     new webpack.optimize.LimitChunkCountPlugin({
