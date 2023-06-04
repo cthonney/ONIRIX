@@ -2,7 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 
 // devtool based on environment
-const devtool = process.env.NODE_ENV === "production" ? "source-map" : "eval-source-map";
+const devtool = process.env.NODE_ENV === "production" ? false : "eval-source-map";
 // mode based on environment
 const mode = process.env.NODE_ENV === "production" ? "production" : "development";
 
@@ -14,7 +14,6 @@ module.exports = {
   },
   output: {
     filename: "[name].js",
-    sourceMapFilename: "[file].map",
     path: path.resolve(__dirname, "app/assets/builds"),
   },
   plugins: [
