@@ -1,9 +1,14 @@
-const path    = require("path")
-const webpack = require("webpack")
+const path = require("path");
+const webpack = require("webpack");
+
+// devtool based on environment
+const devtool = process.env.NODE_ENV === "production" ? "source-map" : "eval-source-map";
+// mode based on environment
+const mode = process.env.NODE_ENV === "production" ? "production" : "development";
 
 module.exports = {
-  mode: "production",
-  devtool: "source-map",
+  mode: mode,
+  devtool: devtool,
   entry: {
     application: "./app/javascript/application.js"
   },
